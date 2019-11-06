@@ -10,6 +10,9 @@ public class GeneralizedDeterminantCalculator {
         } else if (n == 2) {
             return (matrix[0][0] * matrix[1][1]) - (matrix[0][1] * matrix[1][0]);
         } else {
+            for (int j = 0; j < n; j++) {
+
+            }
            // int[][] renovatedMatrix = renovateMatrix()
            // return renovatedMatrix[0][0] * calculate(n - 1, new int[][] )
         }
