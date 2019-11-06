@@ -11,7 +11,7 @@ public class GeneralizedDeterminantCalculator {
             return (matrix[0][0] * matrix[1][1]) - (matrix[0][1] * matrix[1][0]);
         } else {
             for (int j = 0; j < n; j++) {
-
+                int[][] renovatedMatrix = renovateMatrix(matrix, j);
             }
            // int[][] renovatedMatrix = renovateMatrix()
            // return renovatedMatrix[0][0] * calculate(n - 1, new int[][] )
@@ -20,6 +20,14 @@ public class GeneralizedDeterminantCalculator {
     }
 
     public static int[][] renovateMatrix(int[][] matrix, int j) {
+        int[][] renovatedMatrix = new int[matrix.length - 1][matrix.length - 1];
 
+        int renovatedMatrixColumnIterator = 0;
+        int renovatedMatrixRowIterator = 0;
+        for (int i = 0; i < matrix.length; i++) {
+            for (int k = 0; k < matrix.length; k++) {
+                if (i != 0 && k != j ) // if not on first row and k is not the column we want to burn
+            }
+        }
     }
 }
