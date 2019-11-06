@@ -25,15 +25,16 @@ public class GeneralizedDeterminantCalculator {
         int renovatedMatrixColumnIterator = 0;
         int renovatedMatrixRowIterator = 0;
         for (int i = 0; i < matrix.length; i++) {
-            for (int k = 0; k < matrix.length; k++) {
-                if (i != 0 && k != j ) { // if not on first row and k is not the column we want to burn
-                    renovatedMatrix[renovatedMatrixRowIterator][renovatedMatrixColumnIterator] = matrix[i][k];
-                    renovatedMatrixColumnIterator++;
-                }
-            }
-            renovatedMatrixColumnIterator = 0;
             if (i != 0) {
+                for (int k = 0; k < matrix.length; k++) {
+                    if (k != j ) { // if not on first row and k is not the column we want to burn
+                        renovatedMatrix[renovatedMatrixRowIterator][renovatedMatrixColumnIterator] = matrix[i][k];
+                        renovatedMatrixColumnIterator++;
+                    }
+                }
+
                 renovatedMatrixRowIterator++;
+                renovatedMatrixColumnIterator = 0;
             }
         }
 
