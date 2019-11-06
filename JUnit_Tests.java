@@ -1,13 +1,15 @@
 package Generalized
 
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.Timeout;
 
 import static org.junit.Assert.assertEquals;
 
 public class JUnit_Tests {
 
-    //@Rule
-    //public Timeout globalTimeout = new Timeout(2);
+    @Rule
+    public Timeout globalTimeout = new Timeout(2);
 
     @Test
     public void test_renovateMatrix_One() {
@@ -45,7 +47,23 @@ public class JUnit_Tests {
         int[][] tester = new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
         int val = GeneralizedDeterminantCalculator.calculate(3, tester);
 
-        assertEquals("Ensure that the determinant was calculated correctly!", 00, val);
+        assertEquals("Ensure that the determinant was calculated correctly!", 0, val);
+    }
+
+    @Test
+    public void test_calculate_two() {
+        int[][] tester = new int[][]{{1,2,3,4}, {5,6,7,8}, {9,10,11,12}, {13,14,15,16}};
+        int val = GeneralizedDeterminantCalculator.calculate(4, tester);
+
+        assertEquals("Ensure that the determinant was calculated correctly!", 0, val);
+    }
+
+    @Test
+    public void test_calculate_three() {
+        int[][] tester = new int[][]{{1,2,3,4}, {17,29,15,17}, {55,83,102,205}, {13,14,15,16}};
+        int val = GeneralizedDeterminantCalculator.calculate(4, tester);
+
+        assertEquals("Ensure that the determinant was calculated correctly!", 24480, val);
     }
 
 
