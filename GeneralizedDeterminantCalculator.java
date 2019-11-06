@@ -31,7 +31,10 @@ public class GeneralizedDeterminantCalculator {
                     renovatedMatrixColumnIterator++;
                 }
             }
-            renovatedMatrixRowIterator++;
+            renovatedMatrixColumnIterator = 0;
+            if (i != 0) {
+                renovatedMatrixRowIterator++;
+            }
         }
 
         return renovatedMatrix;
