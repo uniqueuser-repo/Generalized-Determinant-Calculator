@@ -39,4 +39,14 @@ public class JUnit_Tests {
         assertEquals("Ensure the values are identical!", 7, returnMatrix[1][0]);
         assertEquals("Ensure the values are identical!", 9, returnMatrix[1][1]);
     }
+
+    @Test
+    public void test_calculate_one() {
+        int[][] tester = new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+        int val = GeneralizedDeterminantCalculator.calculate(3, tester);
+
+        assertEquals("Ensure that the determinant was calculated correctly!", 00, val);
+    }
+
+
 }
