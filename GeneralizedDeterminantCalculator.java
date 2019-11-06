@@ -10,13 +10,14 @@ public class GeneralizedDeterminantCalculator {
         } else if (n == 2) {
             return (matrix[0][0] * matrix[1][1]) - (matrix[0][1] * matrix[1][0]);
         } else {
-            for (int j = 0; j < n; j++) {
+            int sum = 0;
+            for (int j = 0; j < n; j++) {                            // calculates a_ij * c_ij column by column, sums it with the +=
                 int[][] renovatedMatrix = renovateMatrix(matrix, j);
+                sum += matrix[0][j] * Math.pow(-1, 1 + (j + 1)) * calculate(n - 1, renovatedMatrix);
             }
-           // int[][] renovatedMatrix = renovateMatrix()
-           // return renovatedMatrix[0][0] * calculate(n - 1, new int[][] )
+            return sum;
+
         }
-        return 0;
     }
 
     public static int[][] renovateMatrix(int[][] matrix, int j) {
