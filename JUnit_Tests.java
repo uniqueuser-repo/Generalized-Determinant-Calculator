@@ -1,7 +1,4 @@
-package Generalized
-
-import org.junit.Rule;
-import org.junit.Test;
+import org.junit.*;
 import org.junit.rules.Timeout;
 
 import static org.junit.Assert.assertEquals;
@@ -64,6 +61,24 @@ public class JUnit_Tests {
         int val = GeneralizedDeterminantCalculator.calculate(4, tester);
 
         assertEquals("Ensure that the determinant was calculated correctly!", 24480, val);
+    }
+
+    @Test
+    public void test_calculate_four() {
+        int[][] tester = new int[][] {{-3,2,2}, {1,4,1}, {7, 6, -2}};
+        int val = GeneralizedDeterminantCalculator.calculate(3, tester);
+
+        assertEquals("Ensure that the determinant was calculated correctly!", 16, val);
+
+    }
+
+    @Test
+    public void test_calculate_five() {
+        int[][] tester = new int[][] {{3, 1, 3, 0}, {3, 1, 3, 1}, {0, 0, 2, 1}, {6, 3, 4, 5}};
+        int val = GeneralizedDeterminantCalculator.calculate(4, tester);
+
+        assertEquals("Ensure that the determinant was calculated correctly!", -6, val);
+
     }
 
 

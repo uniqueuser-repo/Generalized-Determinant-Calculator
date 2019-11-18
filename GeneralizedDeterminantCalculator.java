@@ -1,4 +1,4 @@
-package Generalized
+
 
 public class GeneralizedDeterminantCalculator {
 
